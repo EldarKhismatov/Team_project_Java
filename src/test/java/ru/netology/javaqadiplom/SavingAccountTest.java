@@ -71,10 +71,10 @@ public class SavingAccountTest {
         Assertions.assertFalse(account.pay(5_000));
     }
 
-    @Test // Остаток после оплаты больше минимально допустимой суммы
+    @Test // Остаток после оплаты равен минимально допустимой сумме
     public void shouldBalanceAboveTheMin() {
         SavingAccount account = new SavingAccount(
-                2_000,
+                3_000,
                 1_000,
                 10_000,
                 5
