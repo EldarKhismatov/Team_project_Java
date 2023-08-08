@@ -130,4 +130,16 @@ public class SavingAccountTest {
             );
         });
     }
+
+    @Test //Исключение, если минимельный баланс больше максимального
+    public void shouldNotPayMimBalanceMoreThenMaxBalance() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            SavingAccount account = new SavingAccount(
+                    2_000,
+                    10_000,
+                    5_000,
+                    5
+            );
+        });
+    }
     }
